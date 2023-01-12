@@ -1,7 +1,11 @@
 from random import randint
 
 
+from graphic_arts.start_game_banner import run_screensaver
+
+
 def attack(char_name: str, char_class: str) -> str:
+    """Attack of the intruder."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный {5+randint(3,5)}')
     if char_class == 'mage':
@@ -12,6 +16,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Protection from the enemy."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -22,6 +27,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Protection of the special."""
     if char_class == 'warrior':
         return (f'{char_name} применил умение «Выносливость {105}»')
     if char_class == 'mage':
@@ -32,6 +38,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Training of the hero."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -40,7 +47,7 @@ def start_training(char_name: str, char_class: str) -> str:
         print(f'{char_name}, ты Лекарь — чародей, способный исцелять раны.')
     print('Потренируйся управлять своими навыками.')
     print('Введи одну из команд: attack — чтобы атаковать противника, defence'
-          ' — чтобы flake8 main.pазблокировать атаку противника или special —'
+          ' — чтобы pазблокировать атаку противника или special —'
           ' чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
     cmd: str = None
@@ -56,6 +63,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Choose of the hero."""
     approve_choice: str = None
     char_class: str = None
     while approve_choice != 'y':
@@ -75,7 +83,8 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main() -> str:
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
